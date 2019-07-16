@@ -24,10 +24,8 @@ async def leave(e):
 
 @register(outgoing=True, pattern="^;__;$")
 async def fun(e):
-    t = ";__;"
-    for j in range(10):
-        t = t[:-1] + "_;"
-        await e.edit(t)
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+        await e.edit(";______________;")
 
 @register(outgoing=True, pattern="^Oof$")
 async def Oof(e):
