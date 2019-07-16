@@ -17,11 +17,11 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 UNAPPROVED_MSG = ("`Hello`\n\n"
-                  "`Sorry I m not in a condition of helping anyone so it isn't worth messaging me.`\n"
+                  "`Sorry I'm not in a condition of helping anyone so it isn't worth messaging me.`\n"
                   "`Instead, go to Google or` @CraBinz `and find solutions.`\n\n"
                   "`Trust me you will discover more than what you think...\n`"
                   "`Regards,`\n"
-                  "`Spyder`")
+                  "`Spyder :)`")
 # =================================================================
 
 
@@ -145,11 +145,11 @@ async def approvepm(apprvpm):
         try:
             approve(uid)
         except IntegrityError:
-            await apprvpm.edit("`User may already be approved.`")
+            await apprvpm.edit("`This bsdka may already be approved.`")
             return
 
         await apprvpm.edit(
-            f"[{name0}](tg://user?id={uid}) `retarted nigga approved to PM, KEK!`"
+            f"[{name0}](tg://user?id={uid}) `retarted nibba approved to PM, KEK!`"
         )
 
         if BOTLOG:
@@ -200,7 +200,7 @@ async def unblockpm(unblock):
     if not unblock.text[0].isalpha() and unblock.text[0] \
             not in ("/", "#", "@", "!") and unblock.reply_to_msg_id:
 
-        await unblock.edit("`My Master has forgiven you to PM now`")
+        await unblock.edit("`Aye bc,my Master has forgiven you to PM now`")
 
         if unblock.reply_to_msg_id:
             reply = await unblock.get_reply_message()
