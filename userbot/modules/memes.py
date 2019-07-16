@@ -325,15 +325,6 @@ async def kek(keks):
         await keks.edit(":" + uio[i % 2])
 
 
-@register(outgoing=True, pattern="^-_-$")
-async def lol(lel):
-    """ Ok... """
-    okay = "-_-"
-    for _ in range(10):
-        okay = okay[:-1] + "_-"
-        await lel.edit(okay)
-
-
 @register(outgoing=True, pattern="^.cp(?: |$)(.*)")
 async def copypasta(cp_e):
     """ Copypasta the famous meme """
