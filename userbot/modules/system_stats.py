@@ -117,7 +117,7 @@ async def amireallyalive(alive):
         await alive.edit(
             "`"
            "Guruji hum abhi zinda hai ;) \n\n"
-            f"User: {DEFAULTUSER} \n"
+            f"Owner: Pero Sar @Spyderzzz \n"
             "`"
             )
 
