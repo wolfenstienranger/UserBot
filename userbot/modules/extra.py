@@ -22,9 +22,9 @@ async def leave(e):
         else:
             await e.edit('`Sar This is Not A Chat`')
 
-@register(outgoing=True, pattern="^;__;$")
+@register(outgoing=True, pattern="^;_;$")
 async def fun(e):
-    t = ";__;"
+    t = ";_;"
     for j in range(20):
         t = t[:-1] + "_;"
         await e.edit(t)
@@ -88,14 +88,14 @@ async def disapprovepm(disapprvpm):
             name0 = str(aname.first_name)
 
         await disapprvpm.edit(
-            f"[{name0}](tg://user?id={disapprvpm.chat_id}) `Disaproved to PM!`"
+            f"[{name0}](tg://user?id={disapprvpm.chat_id}) `bsdka Disapproved to PM!`"
             )
 
         if BOTLOG:
             await bot.send_message(
                 BOTLOG_CHATID,
                 f"[{name0}](tg://user?id={disapprvpm.chat_id})"
-                " was disapproved to PM you.",
+                " this chuu nubfuk has been disapproved to PM you.",
             )
 
 @register(outgoing=True, pattern="^.clock$")
