@@ -24,16 +24,16 @@ async def mention_afk(mention):
         if ISAFK:
             if mention.sender_id not in USERS:
                 await mention.reply(
-                    f"Sorry! My boss is AFK due to `{AFKREASON}`."
-                    "\nWould ping him to look into the message soon 😉."
+                    f"Aye bsdk,My boss is AFK due to `{AFKREASON}`."
+                    "\nDon't Disturb else Rape."
                 )
                 USERS.update({mention.sender_id: 1})
                 COUNT_MSG = COUNT_MSG + 1
             elif mention.sender_id in USERS:
                 if USERS[mention.sender_id] % 5 == 0:
                     await mention.reply(
-                        "Sorry! But my boss is still not here."
-                        "\nTry to ping him a little later. I am sorry 😖."
+                        "BSdk gey,But my boss is still not here."
+                        "\nTry to ping him a little later.Ab Nikal 😖."
                         f"\nHe told me he was busy with `{AFKREASON}`."
                     )
                     USERS[mention.sender_id] = USERS[mention.sender_id] + 1
@@ -53,7 +53,7 @@ async def afk_on_pm(sender):
         if ISAFK:
             if sender.sender_id not in USERS:
                 await sender.reply(
-                    f"Sorry! My boss is AFK due to `{AFKREASON}`."
+                    f"Abey,My boss is AFK due to `{AFKREASON}`."
                     "\nI'll ping him to look into the message soon 😉."
                 )
                 USERS.update({sender.sender_id: 1})
@@ -61,7 +61,7 @@ async def afk_on_pm(sender):
             elif sender.sender_id in USERS:
                 if USERS[sender.sender_id] % 5 == 0:
                     await sender.reply(
-                        "Sorry! But my boss is still not here."
+                        "Bitch,But my boss is still not here."
                         "\nTry to ping him a little later. I am sorry 😖."
                         f"\nHe told me he was busy with `{AFKREASON}`."
                     )
