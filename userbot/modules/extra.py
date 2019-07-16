@@ -60,12 +60,12 @@ async def _(event):
 @register(outgoing=True, pattern="^.source$")
 async def source(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("https://github.com/shivamkchoudhary/Userbot/")
+        await e.edit("https://github.com/Spyderzz/UserBot/")
 
 @register(outgoing=True, pattern="^.readme$")
 async def reedme(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("https://github.com/shivamkchoudhary/UserBot/blob/master/README.md")
+        await e.edit("https://github.com/Spyderzz/UserBot/blob/master/README.md")
 
 @register(outgoing=True, pattern="^.disapprove$")
 async def disapprovepm(disapprvpm):
