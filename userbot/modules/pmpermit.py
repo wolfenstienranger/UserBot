@@ -16,10 +16,12 @@ from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID,
 from userbot.events import register
 
 # ========================= CONSTANTS ============================
-UNAPPROVED_MSG = ("`Bleep blop! This is a bot. Don't fret.`\n\n"
-                  "`My master hasn't approved you to PM.`"
-                  "`Please wait for my master to look in, he mostly approves PMs.`\n\n"
-                  "`As far as I know, he doesn't usually approve retards though.`")
+UNAPPROVED_MSG = ("`Hello`\n\n"
+                  "`Sorry I m not in a condition of helping anyone so it isn't worth messaging me.`\n"
+                  "`Instead, go to Google or` @CraBinz `and find solutions.`\n\n"
+                  "`Trust me you will discover more than what you think...\n`"
+                  "`Regards,`\n"
+                  "`Spyder`")
 # =================================================================
 
 
@@ -61,8 +63,8 @@ async def permitpm(event):
 
                 if COUNT_PM[event.chat_id] > 4:
                     await event.respond(
-                        "`You were spamming my master's PM, which I don't like.`"
-                        " `I'mma Report Spam.`"
+                        "`You were spamming my peru master's PM, which I don't like.`"
+                        " `I'mma Report Spam, now GTFO.`"
                     )
 
                     try:
@@ -120,7 +122,7 @@ async def notifon(non_event):
 
 @register(outgoing=True, pattern="^.pm$")
 async def approvepm(apprvpm):
-    """ For .approve command, give someone the permissions to PM you. """
+    """ For .pm command, give someone the permissions to PM you. """
     if not apprvpm.text[0].isalpha() and apprvpm.text[0] not in ("/", "#", "@", "!"):
         try:
             from userbot.modules.sql_helper.pm_permit_sql import approve
@@ -147,7 +149,7 @@ async def approvepm(apprvpm):
             return
 
         await apprvpm.edit(
-            f"[{name0}](tg://user?id={uid}) `approved to PM!`"
+            f"[{name0}](tg://user?id={uid}) `retarted nigga approved to PM, KEK!`"
         )
 
         if BOTLOG:
@@ -163,7 +165,7 @@ async def blockpm(block):
     """ For .block command, block people from PMing you! """
     if not block.text[0].isalpha() and block.text[0] not in ("/", "#", "@", "!"):
 
-        await block.edit("`You are gonna be blocked from PM-ing my Master!`")
+        await block.edit("`This chuu nubfuk has been blocked for PM-ing you Sar!`")
 
         if block.reply_to_msg_id:
             reply = await block.get_reply_message()
@@ -215,7 +217,7 @@ async def unblockpm(unblock):
 
 CMD_HELP.update({
     "pmpermit": "\
-.approve\
+.pm\
 \nUsage: Approves the mentioned/replied person to PM.\
 \n\n.block\
 \nUsage: Blocks the person from PMing you.\
