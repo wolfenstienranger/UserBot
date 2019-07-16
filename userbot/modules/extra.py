@@ -22,10 +22,11 @@ async def leave(e):
         else:
             await e.edit('`Sar This is Not A Chat`')
 
-@register(outgoing=True, pattern="^;__;$")
+@register(outgoing=True, pattern="^.p$")
 async def fun(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit(";______________;")
+        await e.edit(";_________;")
+
 
 @register(outgoing=True, pattern="^Oof$")
 async def Oof(e):
