@@ -22,11 +22,11 @@ async def leave(e):
         else:
             await e.edit('`Sar This is Not A Chat`')
 
-@register(outgoing=True, pattern="^;_;$")
+@register(outgoing=True, pattern="^;__;$")
 async def fun(e):
-    t = ";_;"
-    for j in range(20):
-        t = t[:-1] + "_;"
+    t = ";__;"
+    for j in range(11):
+        t = t[:-1] + "__;"
         await e.edit(t)
 
 
