@@ -83,6 +83,14 @@ async def repeat(e):
     repmessage = message * count
     await e.respond(repmessage)
     await e.delete()
+    
+@register(outgoing=True, pattern="^.repeats")
+async def repeats(e):
+    message = e.text[10:]
+    count = int(e.text[8:10])
+    repmessage = message * count
+    await wait([e.respond(repmessage)for i in range(count)])
+    await e.delete()
 
 @register(outgoing=True, pattern="^.picspam")
 async def tiny_pic_spam(e):
