@@ -100,65 +100,10 @@ async def set_group_photo(gpic):
                 await gpic.edit(PP_ERROR)
 
 
-@register(outgoing=True, pattern="^.promote(?: |$)(.*)")
-@register(incoming=True, pattern="^.promote(?: |$)(.*)")
-async def promote(promt):
-    """ For .promote command, do promote targeted person """
-    if not promt.text[0].isalpha() \
-            and promt.text[0] not in ("/", "#", "@", "!"):
-        # Get targeted chat
-        chat = await promt.get_chat()
-        # Grab admin status or creator in a chat
-        admin = chat.admin_rights
-        creator = chat.creator
 
-        # If not admin and not creator, also return
-        if not admin and not creator:
-            await promt.edit(NO_ADMIN)
-            return
+                    
 
-        new_rights = ChatAdminRights(
-            add_admins=None,
-            invite_users=True,
-            change_info=None,
-            ban_users=None,
-            delete_messages=None,
-            pin_messages=None
-        )
 
-        await promt.edit("`Promoting...`")
-
-        user = await get_user_from_event(promt)
-        if user:
-            pass
-        else:
-            return
-
-        # Try to promote if current user is admin or creator
-        try:
-            await promt.client(
-                EditAdminRequest(
-                    promt.chat_id,
-                    user.id,
-                    new_rights
-                )
-            )
-            await promt.edit("`Promoted Successfully!`")
-
-        # If Telethon spit BadRequestError, assume
-        # we don't have Promote permission
-        except BadRequestError:
-            await promt.edit(NO_PERM)
-            return
-
-        # Announce to the logging group if we have promoted successfully
-        if BOTLOG:
-            await promt.client.send_message(
-                BOTLOG_CHATID,
-                "#PROMOTE\n"
-                f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-                f"CHAT: {promt.chat.title}(`{promt.chat_id}`)"
-            )
 
 
 @register(outgoing=True, pattern="^.demote(?: |$)(.*)")
